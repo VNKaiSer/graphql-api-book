@@ -1,4 +1,4 @@
-const books = [
+export const books = [
     {
         id: 1,
         title: "Harry Potter",
@@ -14,7 +14,7 @@ const books = [
     }
 ]
 
-const authors = [
+export const authors = [
     {
         id: 1,
         name: "J.K. Rowling",
@@ -26,8 +26,3 @@ const authors = [
         age: 100
     }
 ]
-
-module.exports = {
-    books,
-    authors
-}

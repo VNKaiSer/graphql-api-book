@@ -1,5 +1,5 @@
 const { books, authors } = require('../data/static');
-const reslover = {
+const resolvers = {
     Query: {
         books: () => books,
         book: (parent: any, args: { id: any; }) => books.find((book: { id: any; }) => book.id == args.id),
@@ -11,10 +11,13 @@ const reslover = {
         author: (parent: any, args: any) => {
             return authors.find((author: { id: number; }) => author.id == parent.authorID)
         }
+    },
 
+    Author: {
+        books: (parent: any, args: any) => {
+            return books.filter((book: { authorID: number; }) => book.authorID == parent.id)
+        }
     }
-
-
 }
 
-export default reslover;
+export default resolvers;
